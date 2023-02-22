@@ -1,0 +1,67 @@
+<!--make a order status page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <script src="https://kit.fontawesome.com/1c419ff03d.js" crossorigin="anonymous"></script>
+<style>
+        .container {
+      margin-top: 200px;
+    }
+    .fa-circle-check {
+      font-size: 100px;
+      color: #00b300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn-primary {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 100px;
+      margin-top: 20px;
+    }
+    h3 {
+      padding-top: 20px;
+    }
+    h5 {
+      padding-top: 20px;
+    }
+    h6 {
+      padding-top: 20px;
+    }
+
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <i class="fa-regular fa-circle-check"></i>
+        <h3 class="text-center">YOUR ORDER HAS BEEN PLACED SUCESSFULLY</h3>
+        <h5 class="text-center">Your Estimated Delivery Date is {{ deliverydate }}</h5>
+        <h6 class="text-center">You will receive a confirmation email shortly</h6>
+
+        <a href="{% url 'userviewproduct' %}">
+            <button class="btn btn-primary">OK</button>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+      
+</body>
+</html>
