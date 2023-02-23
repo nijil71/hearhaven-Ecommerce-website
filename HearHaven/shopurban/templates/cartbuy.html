@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <script src="https://kit.fontawesome.com/1c419ff03d.js" crossorigin="anonymous"></script>
+  <style>
+ .navbar{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  }
+            .navbar-brand{
+  margin-left: 4%;
+  font-size: 20px;
+  font-weight: 700;
+}
+.nav-link{
+    font-size: 15px;
+    margin-left: 50px;
+    margin-top: 8px;
+    font-weight: 700;
+
+}
+/*make the div item center*/
+
+
+.form-control{
+  width: 200px;
+  border-radius: 20px;
+    margin-left: 10px;
+    height: 30px;
+}
+.d-flex{
+    margin-top: 13px;
+  margin-left: 80px;
+}
+
+.btn{
+  margin-left: 10px;
+}
+.fa-search{
+    position: absolute;
+  margin-top: 8px;
+    margin-left: 180px;
+    color: grey;
+}
+.icon{
+        margin-left: 200px;
+    }
+
+    .col-4{
+        padding: 30px;    
+    }
+
+   .col-4 img{
+        width: 50%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    .col-8{
+        padding: 20px;    }
+
+    /* style the input box */
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+      width: 300px;
+    }
+    input[type=number] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+      width: 300px;
+    }
+    input{
+        border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            
+          <a class="navbar-brand" href="{% url 'index' %}"><i class="fa-solid fa-headphones fa-xl"></i>
+            HearHaven
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Deals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">What's New</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Brands
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Bose</a></li>
+                  <li><a class="dropdown-item" href="#">Sony </a></li>
+                  <li><a class="dropdown-item" href="#">Apple</a></li>
+                  <li><a class="dropdown-item" href="#">Samsung</a></li>
+                  <li><a class="dropdown-item" href="#">JBL</a></li>
+                  <li><a class="dropdown-item" href="#">LG</a></li>
+                  <li><a class="dropdown-item" href="#">OnePlus</a></li>
+                  <li><a class="dropdown-item" href="#">Nothing</a></li>
+                  <li><a class="dropdown-item" href="#">Realme</a></li>
+                  <li><a class="dropdown-item" href="#">Mi</a></li>
+                </ul>
+              </li>
+      
+                  <li class="nav-item">
+                    <form class="d-flex">
+                        <i class="fas fa-search"></i>
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      
+                    </form>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/viewproduct">
+                    <span class="icon"><i class="fa-solid fa-user fa-lg"></i></span>  
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/wishlist/">
+                    <span><i class="fa-solid fa-heart fa-lg"></i></span>  
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/cart/">
+                    <span><i class="fa-solid fa-cart-shopping fa-lg"></i> </span>
+                      
+                  </a>
+                </li>
+  
+            </ul>
+          </div>
+        </div>
+      </nav>
+        <h1 style="text-align: center;margin-top: 20px;">
+          <strong>Shopping bag</strong>
+        </h1>
+        <div class="container" id="new">
+
+        <div class="row">
+            <div class="col-4" id="img">
+              <div class="form">
+                <form  method="post">
+                  {% csrf_token %}
+                  <img src="{% static image %}" alt="product image" style="width: 100%;height: 100%;" name="productimage">
+                </form>
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="form">
+                <form method="post">{% csrf_token %}
+                  <input type="text" name="productname" value="{{data.productname}}" readonly>
+                  <br><br>
+                  <input type="text" name="productdescription" value="{{data.productdescription}}" readonly>
+                  <br><br>
+                  <input type="text" name="productprice" value="{{data.productprice}}" readonly>
+                  <br><br>
+                  <input type="number" name="productquantity"   placeholder="quantity">
+                  <br><br>
+                  <input type="submit" name="submit" value="Buy Now" class="btn btn-primary">
+                </form>
+              </div>
+ 
+
+                
+            </div>
+        </div>
+
+        </div>
+
+  
+
+</body>
+</html>

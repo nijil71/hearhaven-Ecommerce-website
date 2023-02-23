@@ -1,0 +1,60 @@
+.navbar-brand {
+  margin-left: 4%;
+  font-size: 25px;
+}
+.nav-link {
+  font-size: 17px;
+  margin-left: 50px;
+}
+
+.form-control {
+  width: 200px;
+  border-radius: 20px;
+  margin-left: 10px;
+  height: 30px;
+}
+.d-flex {
+  margin-top: 6px;
+  margin-left: 80px;
+}
+
+.btn {
+  margin-left: 10px;
+}
+
+
+.form {
+  margin: 0 auto;
+  width: 50%;
+  padding: 2em;
+  padding-top: 30px;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  box-shadow: 0 0 1em #ccc;
+  margin-top: 100px;
+  padding-left: 100px;
+}
+.form h1 {
+  text-align: center;
+}
+.form input {
+  width: 100%;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+  margin-left: 1em;
+}
+.form button {
+  width: 100%;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+  margin-left: 1em;
+}
+.col-md-6 {
+  margin-top: 10%;
+}
+
+

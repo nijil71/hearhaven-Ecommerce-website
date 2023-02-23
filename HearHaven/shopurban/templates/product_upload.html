@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/1c419ff03d.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* style the upload form look modern */
+      .form {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .form h3 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><i class="fa-solid fa-person fa-xl"></i>
+          HearHaven
+        </a>
+      </div>
+    </nav>
+    <!--create a product upload form-->
+    <div class="container-fluid">
+        <div class="form">
+            <h3>Upload a product</h3>
+            <form method="post" enctype="multipart/form-data" >{% csrf_token %}
+                <div class="mb-3">
+                    <label for="productname" class="form-label">product name
+                        <span>
+                            *
+                        </span>
+                    </label>
+                    <input type="text" name="productname" id="productname" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label for="productprice" class="form-label">product price
+                      <span>
+                          *
+                      </span>
+                  </label>
+                  <input type="number" name="productprice" id="productprice" class="form-control">
+              </div>
+                <div class="mb-3">
+                    <label for="productdescription" class="form-label">product description
+                        <span>
+                            *
+                        </span>
+                    </label>
+
+                    <textarea name="productdescription" id="productdescription" class="form-control"></textarea>
+                    </div>
+
+                <div class="mb-3">
+                    <label for="productimage" class="form-label">Upload image
+                        <span>
+                            *
+                        </span>
+                    </label>
+
+                    <input type="file" name="productimage" id="productimage" class="form-control">
+                </div>
+
+
+
+                <button type="submit" name="cancel" class="btn btn-light">cancel</button>
+
+                    <button type="submit" name="login" class="btn btn-primary">submit</button>
+        </div>
+  </body>
+</html>
